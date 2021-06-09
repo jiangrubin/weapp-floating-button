@@ -1,0 +1,52 @@
+.movable-area {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+}
+
+.movable-view {
+  position: relative;
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+}
+
+.trigger, .option {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: linear-gradient(133deg, #4593ff 25%, #1677FE 88%);
+  box-shadow: 0 0 10px 0 rgba(5, 66, 150, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  user-select: none;
+}
+
+.trigger {
+  position: relative;
+  z-index: 2;
+}
+
+.option {
+  position: absolute;
+  bottom: 0;
+  box-shadow: none;
+  will-change: bottom, transform, box-shadow;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.75);
+}
+
+.options.show .option {
+  transform: scale(1);
+  box-shadow: 0 0 10px 0 rgba(5, 66, 150, 0.5);
+}
+
+.text {
+  font-size: 14px;
+}

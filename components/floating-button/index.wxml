@@ -1,0 +1,34 @@
+<movable-area class="floating-button movable-area" style="z-index: {{ zIndex }};">
+  <movable-view
+    direction="all"
+    out-of-bounds
+    class="movable-view"
+    x="{{ x }}"
+    y="{{ y }}"
+  >
+    <view class="options {{ active ? 'show' : '' }}">
+      <block wx:for="{{ options }}" wx:key="value">
+        <view
+          class="option"
+          catch:tap="select"
+          data-option="{{ item }}"
+          style="bottom: {{ active ? (index + 1) * 60 : 0 }}px;"
+        >
+          <van-icon name="plus" size="14" />
+          <text>{{ item.label }}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class="trigger" catch:tap="trigger">
+      <block wx:if="{{ active }}">
+        <van-icon wx:if="{{ !closeText }}" name="cross" size="14" />
+        <text wx:else class="text">{{ closeText }}</text>
+      </block>
+      <block wx:else>
+        <van-icon name="plus" size="14" />
+        <text wx:if="{{ openText }}">{{ openText }}</text>
+      </block>
+    </view>
+  </movable-view>
+</movable-area>
