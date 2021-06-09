@@ -5,5 +5,5 @@
 <details>
   <summary>查看效果</summary>
   
-  <video src="./docs/2021-06-09 13.52.34.mov" width="100%" />
+  <video src="./docs/2021-06-09-13.52.34.gif" width="100%" />
 </details>
